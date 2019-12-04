@@ -211,6 +211,106 @@ button {
     opacity: 1;
 }
 
+/*Card transition with button and text*/
+.bilet {
+    margin: 0 auto;
+    height: 30rem;
+    width: 20rem;
+    background: mediumseagreen;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.bilet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.bilet--2 {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    /*height: 30rem;*/
+    height: 0;
+    width: 20rem;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.5));
+    position: absolute;
+    transform-origin: bottom;
+    transition: all .7s;
+}
+
+.bilet--2__box-info {
+    text-align: center;
+    /*opacity: 0;*/
+
+}
+
+.bilet--2__box-info h3 {
+    opacity: 0;
+    transform: translateY(5.5rem);
+    transition: transform .3s .1s, opacity .6s;
+    color: white;
+}
+
+.bilet--2__box-info button {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    padding: 1rem 2.7rem;
+    margin: 1.7rem 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transform:  translateY(5.5rem) ;
+    transition: transform .3s, opacity .6s .1s;
+}
+
+.bilet--2__box-info button::before {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    border-radius: 50px;
+    transition: all .5s;
+}
+
+.bilet--2__box-info button:hover::before {
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.bilet:hover .bilet--2 {
+    height: 100%;
+}
+
+.bilet:hover .bilet--2__box-info {
+    /*transform: translateY(-5rem);*/
+    opacity: 1;
+}
+
+.bilet:hover .bilet--2__box-info button {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.bilet:hover .bilet--2__box-info h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
 
 
 
